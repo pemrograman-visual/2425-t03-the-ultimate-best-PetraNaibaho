@@ -59,6 +59,7 @@ public class T03 {
                 best = "---";
             }
             System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahun + "|" + penerbit + "|" + format + "|" + harga + "|" + margin + "|" + stok + "|" + toxifed(rate, 1) + "|" + kategori + "|" + ket + "|" + best);
+            iSBN = input.nextLine();
         }
     }
 }
