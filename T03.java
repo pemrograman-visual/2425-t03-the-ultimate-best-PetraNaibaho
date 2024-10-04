@@ -7,7 +7,7 @@ public class T03 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String iSBN, judul, penulis, penerbit, format, kategori, ket, tUB;
+        String iSBN, judul, penulis, penerbit, format, kategori, ket, best;
         int tahun, stok;
         double harga, margin, rate, jenisDiskon;
 
@@ -15,27 +15,27 @@ public class T03 {
         while (!iSBN.equals("---")) {
             judul = input.nextLine();
             penulis = input.nextLine();
-            tahun = input.nextInt();
+            tahun = Integer.parseInt(input.nextLine());
             penerbit = input.nextLine();
             format = input.nextLine();
-            harga = input.nextDouble();
-            margin = input.nextDouble();
+            harga = Double.parseDouble(input.nextLine());
+            margin = Double.parseDouble(input.nextLine());
             jenisDiskon = margin * -1 / harga;
-            if (jenisDiskon > 40 / 100) {
+            if (jenisDiskon > (double) 40 / 100) {
                 ket = "Once in a lifetime";
             } else {
-                if (20 / 100 < jenisDiskon && jenisDiskon < 40 / 100) {
+                if ((double) 20 / 100 < jenisDiskon && jenisDiskon < (double) 40 / 100) {
                     ket = "Never come twice";
                 } else {
-                    if (jenisDiskon <= 20 / 100 && jenisDiskon > 0) {
+                    if (jenisDiskon <= (double) 20 / 100 && jenisDiskon > 0) {
                         ket = "No regret";
                     } else {
                         ket = "---";
                     }
                 }
             }
-            stok = input.nextInt();
-            rate = input.nextDouble();
+            stok = Integer.parseInt(input.nextLine());
+            rate = Double.parseDouble(input.nextLine());
             if (rate >= 4.7) {
                 kategori = "Best Pick";
             } else {
@@ -54,11 +54,11 @@ public class T03 {
                 }
             }
             if (kategori.equals("Best Pick") && ket.equals("Once in a lifetime")) {
-                tUB = "The ultimate best";
+                best = "The ultimate best";
             } else {
-                tUB = "---";
+                best = "---";
             }
-            System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahun + "|" + penerbit + "|" + format + "|" + harga + "|" + margin + "|" + stok + "|" + toxifed(rate, 1) + "|" + kategori + "|" + ket + "|" + tUB);
+            System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahun + "|" + penerbit + "|" + format + "|" + harga + "|" + margin + "|" + stok + "|" + toxifed(rate, 1) + "|" + kategori + "|" + ket + "|" + best);
         }
     }
 }
